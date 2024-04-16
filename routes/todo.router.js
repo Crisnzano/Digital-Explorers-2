@@ -5,7 +5,7 @@ const {
   readTodos,
   updateTodo,
   deleteTodo
-} = require('../controllers/todos.controller');
+} = require('../controllers/todo.controller');
 
 // POST request to create a todo
 router.post('/', createTodo);

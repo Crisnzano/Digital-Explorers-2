@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const port = 3000
 const catsRouter = require('./routes/cat.router');
+const todoRouter = require('./routes/todo.router');
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -36,6 +37,9 @@ app.get('/welcome', (req, res) => {
 
 // Endpoint for handling cat-related requests
 app.use('/cats', catsRouter);
+
+app.use('/todo', todoRouter);
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
