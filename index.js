@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const catsRouter = require('./cats.router');
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -24,6 +25,18 @@ app.get('/flights/:from-:to', (req, res) => {
 
 })
 
+// Middleware to parse JSON bodies
+app.use(express.json());
+
+// Endpoint for the home page
+app.get('/', (req, res) => {
+  res.send('Welcome to the Cat API!');
+});
+
+// Endpoint for handling cat-related requests
+app.use('/cats', catsRouter);
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })
+
