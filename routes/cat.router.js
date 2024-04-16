@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { createCat, getAllCats, getCatById, updateCat, deleteCat } = require('./cats.controller');
+const { createCat, getAllCats, getCatById, updateCat, deleteCat } = require('../controlers/cat.controller');
 
 // Endpoint to create a new cat
 router.post('/', createCat);
