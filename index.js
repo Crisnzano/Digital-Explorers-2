@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const catsRouter = require('./cats.router');
+const catsRouter = require('./routes/cat.router');
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
@@ -30,7 +30,7 @@ app.get('/flights/:from-:to', (req, res) => {
 app.use(express.json());
 
 // Endpoint for the home page
-app.get('/', (req, res) => {
+app.get('/welcome', (req, res) => {
   res.send('Welcome to the Cat API!');
 });
 
